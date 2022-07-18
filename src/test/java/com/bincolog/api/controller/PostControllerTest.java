@@ -70,6 +70,7 @@ class PostControllerTest {
     @Test
     @DisplayName("/posts 요청 시 title값은 필수다.")
     void PostValidChk() throws Exception {
+        // given
         PostCreate request = PostCreate.builder()
                 .title("")
                 .content("내용입니다.")
