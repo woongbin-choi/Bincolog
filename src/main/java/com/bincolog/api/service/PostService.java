@@ -33,8 +33,11 @@ public class PostService {
     }
 
     public PostResponse get(Long id){
+//        Post post = postRepository.findById(id)
+//                .orElseThrow(PostNotFound::new);
+
         Post post = postRepository.findById(id)
-                .orElseThrow(PostNotFound::new);
+                .orElseThrow(IllegalArgumentException::new);
 
         return PostResponse.builder()
                 .id(post.getId())

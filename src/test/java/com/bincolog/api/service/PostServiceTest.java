@@ -68,9 +68,6 @@ class PostServiceTest {
                 .build();
         postRepository.save(requestPost);
 
-        // 클라이언트 요구사항
-        // json 응답에서 title 값 길이를 최대 10글자로 해주세요.(서버에서 해야만 하는 경우라면)
-
         //when
         PostResponse response = postService.get(requestPost.getId());
 
