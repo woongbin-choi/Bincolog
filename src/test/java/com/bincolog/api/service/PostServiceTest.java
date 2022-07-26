@@ -248,7 +248,7 @@ class PostServiceTest {
         postRepository.save(post);
 
         //expected
-        Assertions.assertThrows(PostNotFound.class, () -> {
+        Assertions.assertThrows(RuntimeException.class, () -> {
            postService.delete(post.getId() + 1L);
         });
     }

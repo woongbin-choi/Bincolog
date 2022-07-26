@@ -37,7 +37,7 @@ public class PostService {
 //                .orElseThrow(PostNotFound::new);
 
         Post post = postRepository.findById(id)
-                .orElseThrow(IllegalArgumentException::new);
+                .orElseThrow(PostNotFound::new);
 
         return PostResponse.builder()
                 .id(post.getId())
