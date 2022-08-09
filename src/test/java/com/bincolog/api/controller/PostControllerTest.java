@@ -236,10 +236,10 @@ class PostControllerTest {
     }
 
     @Test
-    @DisplayName("존재하는 글 조회")
+    @DisplayName("존재하지 않는 글 삭제")
     void test9() throws Exception{
         //expected
-        mockMvc.perform(MockMvcRequestBuilders.get("/posts/{postId}", 1L)
+        mockMvc.perform(MockMvcRequestBuilders.delete("/posts/{postId}", 1L)
                         .contentType(APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andDo(print());

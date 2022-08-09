@@ -53,8 +53,6 @@ public class ExceptionController {
                 .validation(e.getValidation())
                 .build();
 
-        // 응답 json validation -> title : 제목에 바보를 포함할 수 없습니다.
-
         ResponseEntity<ErrorResponse> response = ResponseEntity.status(statusCode)
                 .body(body);
 
